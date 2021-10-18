@@ -1,0 +1,204 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>md Documentation (wiki) as a repository - Web site</title>
+		<link rel="stylesheet" href="assets/css/highlight.min.css">
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/tipuesearch.css">
+		<link rel="stylesheet" href="assets/css/main.css">
+	</head>
+	<body>
+		<header class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="">Web site</a> <p class="navbar-text hidden-xs">md Documentation (wiki) as a repository</p>
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+					<form action="search.html" class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" name="q" id="tipue_search_input" autocomplete="off" required class="form-control" placeholder="Search">
+						</div>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index-slideshow.html" target="_blank">View as slideshow</a></li>
+						<!--li><a href="index-raw.html">View Markdown</a></li-->
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<!--
+<div class="toc">
+<p class="lead">Table of contents:</p>
+<p class="toc-1">
+<a href="#md-documentation-wiki-as-a-repository">md Documentation (wiki) as a repository</a>
+</p>
+<p class="toc-2">
+<a href="#keep-your-code-close-and-your-documentation-closer">Keep your code close and your documentation closer</a>
+</p>
+<p class="toc-2">
+<a href="#format">Format</a>
+</p>
+<p class="toc-2">
+<a href="#automation">Automation</a>
+</p>
+<p class="toc-2">
+<a href="#review">Review</a>
+</p>
+<p class="toc-2">
+<a href="#contribution">Contribution</a>
+</p>
+<p class="toc-2">
+<a href="#presentation">Presentation</a>
+</p>
+<p class="toc-2">
+<a href="#issues-to-keep-it-up-to-date">Issues to keep it up to date</a>
+</p>
+<p class="toc-2">
+<a href="#summary">Summary</a>
+</p>
+</div>
+-->
+
+		<div class="container">
+			<div class="row">
+				<nav id="sidebar" class="col-lg-2 col-sm-3">
+					<ul class="nav nav-pills nav-stacked">
+					</ul>
+					<!--
+Available versions:<br>
+raw<br>
+->index-raw.html<br>
+slideshow<br>
+->index-slideshow.html<br>
+default<br>
+->index.html<br>
+<br>
+Document informations:<br>
+index.md<br><br>
+active
+-->
+				</nav>
+				<header>
+					<div class="entry-meta text-right">
+
+					</div>
+				</header>
+				<article id="content" class="col-lg-10 col-sm-9">
+					<h1 id="md-documentation-wiki-as-a-repository">md Documentation (wiki) as a repository</h1>
+<p>Why I think is an <strong>awesome</strong> idea!</p>
+<p>😎</p>
+<h2 id="keep-your-code-close-and-your-documentation-closer">Keep your code close and your documentation closer</h2>
+<p>When writing documentation for code as a different task then it becomes outdated
+very quickly. That&#39;s one reason of why we prefer have the documentation closer
+to the code.</p>
+<p>e.g., as docstrings in Python</p>
+<pre><code class="lang-python">def greet(name):
+    &#39;&#39;&#39;
+    Generate a greeting string for a person.
+
+    Parameters
+    ----------
+    name: str
+       name you want to greet
+
+    Returns
+    -------
+    string
+      Just a greeting
+    &#39;&#39;&#39;
+    return f&quot;Hey, {name} how are you doing?&quot;
+</code></pre>
+<p>Let&#39;s now see how this small fits with the rest of the decisions for tools and
+processes.</p>
+<h2 id="format">Format</h2>
+<p>Though it may seem silly, a familiar format to all makes a difference on its adoption.</p>
+<p>I propose markdown, but all that I&#39;m posting here works with any of the simple
+markup languages. The best part of it is that they are human readable!</p>
+<pre><code class="lang-markdown"># This is a title
+
+## and this a subtitle 
+
+Where you **can** _write_ whatever ~~you want~~, 
+and create [links to any page and within the document](#summary).
+</code></pre>
+<p>And code gets highlighted by writing something like: </p>
+<pre><code class="lang-bash">ssh ssh.rc.ucl.ac.uk
+</code></pre>
+<h5 id="-">⚠</h5>
+<p>Some tools may accept markup text as an input... <br>
+but then once get rendered you lost what was used to created it.</p>
+<h2 id="automation">Automation</h2>
+<p>Either is just for searching a term (<code>rg</code>, <code>grep</code>, ...), search and replace a
+word (<code>sed &#39;s/master/main/g/&#39;</code>) or test that links are still available
+(<code>lychee</code>)... you&#39;d like to do so quickly, being sure you are not missing
+anything.</p>
+<p>Having plain text files where you can run these operations will make your life easier.</p>
+<h2 id="review">Review</h2>
+<p>Code gets reviewed in all our projects, why shouldn&#39;t the documentation deserve the same honours?</p>
+<p>Documentation under a git repository would benefit of the git-flow process.</p>
+<h2 id="contribution">Contribution</h2>
+<p>For me, a wiki is a wiki if anyone can edit it. If I need to be in a particular
+team and I can&#39;t update something I see it&#39;s wrong or outdated, then... what&#39;s the point?</p>
+<p>Any git hosting platform provides ways to create contributions via pull or merge requests.</p>
+<p>But... what about the unfamiliar with <code>git</code>? You can edit it from the website!</p>
+<p><img src="https://i.imgur.com/Bh9b7y2.png" alt=""></p>
+<h2 id="presentation">Presentation</h2>
+<p>You may have guessed right already! This document is using markdown, and <a href="https://github.com/dpshelio/wiki_as_repo/blob/main/index.md">lives on its own repository</a>. And it can be converted easily to different types of output (<a href="/">html</a>, pdf, ...)</p>
+<h4 id="did-you-know-">Did you know...?</h4>
+<p><img src="https://i.imgur.com/OPmLorX.png" alt=""></p>
+<h2 id="issues-to-keep-it-up-to-date">Issues to keep it up to date</h2>
+<p>Sometimes we spot typos, have new ideas, or need to update things... but many
+times that happens when we don&#39;t have the time to add it to the documentation.</p>
+<p>What do we do then? we keep it in our heads, we write it a post it, we keep it for ourselves!</p>
+<p>Using issues for that not only helps us as a reminder to do it later, but it
+also warns others that there&#39;s something that needs change and even maybe
+someone updates it for you!</p>
+<h2 id="summary">Summary</h2>
+<p>We use tools to write code (and sometimes documentation), the closer these tools
+are to us, bigger the chances we will use it.</p>
+<p><strong>We want</strong></p>
+<ul>
+<li>something close to most of us,</li>
+<li>using a familiar format,</li>
+<li>that we can automate if needed,</li>
+<li>that&#39;s easy to review,</li>
+<li>and easy to contribute,</li>
+<li>that&#39;s portable (and presentable as we like)</li>
+</ul>
+<p>Having any type of documentation as plain text (<code>md</code>) within a git repository
+hits all these points.</p>
+
+				</article>
+			</div>
+		</div>
+
+		<footer><a href="site-index.html">Pages index</a>
+</footer>
+
+		<script src="assets/js/jquery.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/highlight.min.js"></script>
+		<script src="assets/js/tipuesearch_set.js"></script>
+		<script src="assets/js/tipuesearch.min.js"></script>
+		<script>
+			$(function() {
+				hljs.initHighlightingOnLoad();
+				$('#tipue_search_input').tipuesearch({
+					mode: 'json',
+					contentLocation: 'index.json'
+				});
+			});
+		</script>
+		
+		<!-- Generated by Vegetables from 'index.md' with format 'default' - '18/10/2021, 20:40:18' -->
+	</body>
+</html>

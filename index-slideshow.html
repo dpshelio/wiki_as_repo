@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>md Documentation (wiki) as a repository</title>
+	<link rel="stylesheet" href="assets/css/reveal/reveal.css">
+	<link rel="stylesheet" href="assets/css/reveal/theme/white.css">
+	<link rel="stylesheet" href="assets/css/highlight-hybrid.css">
+	<link rel="stylesheet" href="assets/css/slideshow.css">
+	<style>
+	</style>
+	<!--  -->
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown
+			data-separator="(^#HSLIDE$|^#HSLIDE\?.*)"
+			data-separator-vertical="(^#VSLIDE$|^#VSLIDE\?.*)"
+			data-separator-notes="^Presentation note:"
+			data-charset="utf-8">
+			<script type="text/template">
+				# md Documentation (wiki) as a repository
+Why I think is an **awesome** idea!
+
+😎
+
+#HSLIDE
+
+## Keep your code close and your documentation closer
+When writing documentation for code as a different task then it becomes outdated
+very quickly. That&#39;s one reason of why we prefer have the documentation closer
+to the code.
+
+e.g., as docstrings in Python
+
+```python
+def greet(name):
+    '''
+    Generate a greeting string for a person.
+
+    Parameters
+    ----------
+    name: str
+       name you want to greet
+
+    Returns
+    -------
+    string
+      Just a greeting
+    '''
+    return f"Hey, {name} how are you doing?"
+```
+Let&#39;s now see how this small fits with the rest of the decisions for tools and
+processes.
+
+#HSLIDE
+
+## Format
+Though it may seem silly, a familiar format to all makes a difference on its adoption.
+
+I propose markdown, but all that I&#39;m posting here works with any of the simple
+markup languages. The best part of it is that they are human readable!
+
+```markdown
+# This is a title
+
+## and this a subtitle 
+
+Where you **can** _write_ whatever ~~you want~~, 
+and create [links to any page and within the document](#summary).
+```
+And code gets highlighted by writing something like: 
+
+```bash
+ssh ssh.rc.ucl.ac.uk
+```
+##### ⚠
+Some tools may accept markup text as an input... <br>
+but then once get rendered you lost what was used to created it.
+
+#HSLIDE
+
+## Automation
+Either is just for searching a term (`rg`, `grep`, ...), search and replace a
+word (`sed &#39;s/master/main/g/&#39;`) or test that links are still available
+(`lychee`)... you&#39;d like to do so quickly, being sure you are not missing
+anything.
+
+Having plain text files where you can run these operations will make your life easier.
+
+#HSLIDE
+
+## Review
+Code gets reviewed in all our projects, why shouldn&#39;t the documentation deserve the same honours?
+
+Documentation under a git repository would benefit of the git-flow process.
+
+#HSLIDE
+
+## Contribution
+For me, a wiki is a wiki if anyone can edit it. If I need to be in a particular
+team and I can&#39;t update something I see it&#39;s wrong or outdated, then... what&#39;s the point?
+
+Any git hosting platform provides ways to create contributions via pull or merge requests.
+
+But... what about the unfamiliar with `git`? You can edit it from the website!
+
+![](https://i.imgur.com/Bh9b7y2.png)
+
+#HSLIDE
+
+## Presentation
+You may have guessed right already! This document is using markdown, and [lives on its own repository](https://github.com/dpshelio/wiki_as_repo/blob/main/index.md). And it can be converted easily to different types of output ([html](/), pdf, ...)
+
+#### Did you know...?
+![](https://i.imgur.com/OPmLorX.png)
+
+#HSLIDE
+
+## Issues to keep it up to date
+Sometimes we spot typos, have new ideas, or need to update things... but many
+times that happens when we don&#39;t have the time to add it to the documentation.
+
+What do we do then? we keep it in our heads, we write it a post it, we keep it for ourselves!
+
+Using issues for that not only helps us as a reminder to do it later, but it
+also warns others that there&#39;s something that needs change and even maybe
+someone updates it for you!
+
+#HSLIDE
+
+## Summary
+We use tools to write code (and sometimes documentation), the closer these tools
+are to us, bigger the chances we will use it.
+
+**We want**
+
+
+- something close to most of us,
+- using a familiar format,
+- that we can automate if needed,
+- that&#39;s easy to review,
+- and easy to contribute,
+- that&#39;s portable (and presentable as we like)
+
+Having any type of documentation as plain text (`md`) within a git repository
+hits all these points.
+
+
+			</script>
+		</section>
+	</div>
+</div>
+
+<script src="assets/js/reveal/reveal.js"></script>
+<script src="assets/js/reveal/lib/head.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script>
+Reveal.initialize({
+	embedded: true,
+	margin: 0.0,
+	showNotes: false,
+	transition: 'slide',
+	autoSlide: 0,
+	loop: false,
+	center: true,
+	rtl: false,
+	shuffle: false,
+	mouseWheel: false,
+	history: true,
+
+	// disabled for now
+	// math: {
+	// 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+	// 	config: 'TeX-AMS_HTML-full'
+	// },
+
+	dependencies: [
+		{ src: "assets/js/reveal/plugin/markdown/marked.js"},
+		{ src: "assets/js/reveal/plugin/markdown/markdown.js"},
+		{ src: "assets/js/reveal/plugin/notes/notes.js"},
+		// { src: "assets/js/reveal/plugin/math/math.js", async: true }
+		{ src: "assets/js/reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+	]
+});
+
+Reveal.configure({
+	keyboard: {
+		67: function() { // bind "s" key to "select" code block content
+
+		var currentSlide = Reveal.getCurrentSlide();
+		var preBlock = $(currentSlide).find("pre");
+
+		if(preBlock.length > 0) {
+
+			if (window.getSelection) {
+				var range = document.createRange();
+				range.selectNodeContents(preBlock[0]);
+				var selection = window.getSelection();
+				selection.removeAllRanges();
+				selection.addRange(range);
+			}
+		}
+	}
+}
+});
+
+</script>
+
+</body>
+</html>
