@@ -88,16 +88,41 @@ Any git hosting platform provides ways to create contributions via pull or merge
 
 But... what about the unfamiliar with `git`? You can edit it from the website!
 
-## Format
+![](https://i.imgur.com/Bh9b7y2.png)
 
+## Presentation
 
+You may have guessed right already! This document is using markdown, and [lives on its own repository](https://github.com/dpshelio/wiki_as_repo/blob/main/index.md). And it can be converted easily to different types of output ([html](/), pdf, ...)
 
+#### Did you know...?
+
+![](https://i.imgur.com/OPmLorX.png)
+
+## Issues to keep it up to date
+
+Sometimes we spot typos, have new ideas, or need to update things... but many
+times that happens when we don't have the time to add it to the documentation.
+
+What do we do then? we keep it in our heads, we write it a post it, we keep it for ourselves!
+
+Using issues for that not only helps us as a reminder to do it later, but it
+also warns others that there's something that needs change and even maybe
+someone updates it for you!
 
 ## Summary
 
 We use tools to write code (and sometimes documentation), the closer these tools
-are to us, the biggest chances we will use it.
+are to us, bigger the chances we will use it.
 
-- close to us
-- familiar format
-- 
+**We want**
+- something close to most of us,
+- using a familiar format,
+- that we can automate if needed,
+- that's easy to review,
+- and easy to contribute,
+- that's portable (and presentable as we like)
+
+Having any type of documentation as plain text (`md`) within a git repository
+hits all these points.
+
+
