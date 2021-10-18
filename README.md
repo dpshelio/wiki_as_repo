@@ -11,3 +11,5 @@ npm install vegetables
 vegetables generate # to see it locally
 vegetables deploy # to push it to github
 ```
+
+Checkuout  [the rendered version](https://dpshelio.github.io/wiki_as_repo/) and as [slides](https://dpshelio.github.io/wiki_as_repo/index-slideshow.html)

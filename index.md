@@ -52,11 +52,8 @@ Where you **can** _write_ whatever ~~you want~~,
 and create [links to any page and within the document](#summary).
 ```
 
-And code gets highlighted by writing something like: 
+And when writing code snippets 👆, it gets highlighted
 
-```bash
-ssh ssh.rc.ucl.ac.uk
-```
 
 ##### ⚠ 
 
@@ -67,7 +64,7 @@ but then once get rendered you lost what was used to created it.
 ## Automation
 
 Either is just for searching a term (`rg`, `grep`, ...), search and replace a
-word (`sed 's/master/main/g/'`) or test that links are still available
+word (`sed`) or test that links are still available
 (`lychee`)... you'd like to do so quickly, being sure you are not missing
 anything.
 
@@ -92,7 +89,7 @@ But... what about the unfamiliar with `git`? You can edit it from the website!
 
 ## Presentation
 
-You may have guessed right already! This document is using markdown, and [lives on its own repository](https://github.com/dpshelio/wiki_as_repo/blob/main/index.md). And it can be converted easily to different types of output ([html](/), pdf, ...)
+You may have guessed right already! This document is using markdown, and [lives on its own repository](https://github.com/dpshelio/wiki_as_repo/blob/main/index.md). And it can be converted easily to different types of output ([html](index.html), pdf, ...)
 
 #### Did you know...?
 
