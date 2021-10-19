@@ -127,3 +127,9 @@ Having any type of documentation as plain text (`md`) within a git repository
 hits all these points.
 
 
+## Suffering with UI?
+
+**Presenting** the _Unofficial_ (and still WIP)
+
+![Jira CLI](https://i.imgur.com/clexvRB.png)
+![](https://raw.githubusercontent.com/ankitpokhrel/jira-cli/main/.github/assets/demo.gif)
